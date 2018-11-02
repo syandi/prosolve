@@ -5,8 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Mesin</div>
-
+                <div class="card-header">
+                    <a class="btn btn-primary" href="/machines/new" role="button">Tambah</a>
+                </div>
                 <div class="card-body">
                 <table class="table">
                     <thead>
@@ -25,7 +26,7 @@
                             <td>{{ $machine->name }}</td>
                             <td>{{ $machine->location }}</td>
                             <td>{{ $machine->type }}</td>
-                            <td></td>
+                            <td><a href="/machines/{{ $machine->id }}"> Edit</td>
                         </tr>
                     @endforeach
                     </tbody>

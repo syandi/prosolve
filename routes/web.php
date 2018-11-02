@@ -20,3 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/machines', 'MachineController@index');
+
+Route::get('/machines/new', 'MachineController@create');
+
+Route::post('/machines', 'MachineController@store');
