@@ -16,7 +16,7 @@ class CreateMachinesTable extends Migration
         Schema::create('machines', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table - string('location');
+            $table->string('location');
             $table->enum('type', ['motor', 'valve_manual', 'valve_otomatis', 'sensor']);
             $table->timestamps();
         });
