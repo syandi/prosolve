@@ -74,7 +74,8 @@ class MachineController extends Controller
      */
     public function edit($id)
     {
-        //
+        $machine = Machine::find($id);
+        return view ('machine.edit', ['machine' => $machine, 'id' => $id]);
     }
 
     /**
@@ -86,7 +87,14 @@ class MachineController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $machine = Machine::find($id);
+        $machine->name = $request->name;
+        $machine->location = $request->location;
+        $machine->type = $request->type;
+
+        $machine->save();
+
+        return redirect('/machines');
     }
 
     /**
@@ -97,6 +105,9 @@ class MachineController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $machine = Machine::find($id);
+        $machine->delete();
+
+        return redirect('/machines');
     }
 }

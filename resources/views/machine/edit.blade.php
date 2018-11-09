@@ -6,17 +6,17 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    Data Mesin Baru
+                    Edit Mesin
                 </div>
                 <div class="card-body">
-                <form method="POST" action="/machines">
+                <form method="POST" action="/machines/{{$id}}">
                         @csrf
 
                         <div class="form-group row">
                             <label for="name" class="col-sm-4 col-form-label text-md-right">Nama</label>
 
                             <div class="col-md-6">
-                                <input id="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                                <input id="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ $machine->name }}" required autofocus>
 
                                 @if ($errors->has('name'))
                                     <span class="invalid-feedback" role="alert">
@@ -30,7 +30,7 @@
                             <label for="location" class="col-sm-4 col-form-label text-md-right">Lokasi</label>
 
                             <div class="col-md-6">
-                                <input id="location" class="form-control{{ $errors->has('location') ? ' is-invalid' : '' }}" name="location" value="{{ old('location') }}" required autofocus>
+                                <input id="location" class="form-control{{ $errors->has('location') ? ' is-invalid' : '' }}" name="location" value="{{ $machine->location }}" required autofocus>
 
                                 @if ($errors->has('location'))
                                     <span class="invalid-feedback" role="alert">
@@ -45,10 +45,10 @@
 
                             <div class="col-md-6">
                                 <select name="type" id="type" class="form-control input-lg dynamic">
-                                    <option value="motor">Motor</option>
-                                    <option value="valve_manual">Valve Manual</option>
-                                    <option value="valve_otomatis">Valve Otomatis</option>
-                                    <option value="sensor">Sensor</option>
+                                    <option value="motor" {{ $machine->type == 'motor' ? 'selected="selected"' : '' }}>Motor</option>
+                                    <option value="valve_manual" {{ $machine->type == 'valve_manual' ? 'selected="selected"' : '' }}>Valve Manual</option>
+                                    <option value="valve_otomatis" {{ $machine->type == 'valve_otomatis' ? 'selected="selected"' : '' }}>Valve Otomatis</option>
+                                    <option value="sensor" {{ $machine->type == 'sensor' ? 'selected="selected"' : '' }}>Sensor</option>
                                 </select>
                             </div>
                         </div>

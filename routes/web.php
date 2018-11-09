@@ -24,3 +24,9 @@ Route::get('/machines', 'MachineController@index');
 Route::get('/machines/new', 'MachineController@create');
 
 Route::post('/machines', 'MachineController@store');
+
+Route::get('/machines/{id}/edit', 'MachineController@edit');
+
+Route::post('/machines/{id}', 'MachineController@update');
+
+Route::get('/machines/{id}/remove', 'MachineController@destroy');

@@ -26,7 +26,10 @@
                             <td>{{ $machine->name }}</td>
                             <td>{{ $machine->location }}</td>
                             <td>{{ $machine->type }}</td>
-                            <td><a href="/machines/{{ $machine->id }}"> Edit</td>
+                            <td>
+                                <a href="/machines/{{ $machine->id }}/edit"> Edit
+                                <a href="/machines/{{ $machine->id }}/remove"> Hapus
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>
