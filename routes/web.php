@@ -21,12 +21,19 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/machines', 'MachineController@index');
 
+Route::get('/produks', 'ProductController@index');
+
 Route::get('/machines/new', 'MachineController@create');
 
+Route::get('/produks/new', 'ProductController@create');
+
 Route::post('/machines', 'MachineController@store');
+
+Route::post('/products', 'ProductController@store');
 
 Route::get('/machines/{id}/edit', 'MachineController@edit');
 
 Route::post('/machines/{id}', 'MachineController@update');
 
 Route::get('/machines/{id}/remove', 'MachineController@destroy');
+

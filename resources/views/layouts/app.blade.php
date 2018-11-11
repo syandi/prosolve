@@ -37,7 +37,7 @@
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <a class="dropdown-item" href="/machines">mesin</a>
-                        <a class="dropdown-item" href="#">Barang</a>
+                        <a class="dropdown-item" href="/produks">Barang</a>
                         <a class="dropdown-item" href="#">Stok</a>
                     </div>
                     </div>
