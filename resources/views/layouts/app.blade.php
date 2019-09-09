@@ -30,18 +30,18 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
+                @auth
                <div class="dropdown">
                     <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Menu
                     </a>
-
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="/machines">mesin</a>
-                        <a class="dropdown-item" href="/produks">Barang</a>
-                        <a class="dropdown-item" href="#">Stok</a>
-                    </div>
-                    </div>
-
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="/machines">Mesin</a>
+                            <a class="dropdown-item" href="/produks">Barang</a>
+                            <a class="dropdown-item" href="#">Stok</a>
+                        </div>
+                </div>
+                @endauth
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
